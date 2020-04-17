@@ -1,28 +1,27 @@
-import sequelize from './sequelize';
-import User from './User';
-import Specialty from './Specialty';
-import Test from './Test';
-import Doctor from './Doctor';
-import Review from './Review';
-import Question from './Question';
-import Option from './Option';
-import Answer from './Answer';
+import sequelize from './sequelize'
+import User from './User'
+import Specialty from './Specialty'
+import Test from './Test'
+import Doctor from './Doctor'
+import Review from './Review'
+import Question from './Question'
+import Option from './Option'
+import Answer from './Answer'
 
-import relations from './relations';
+import relations from './relations'
 
 Object.values(relations).forEach((relationsFunction: Function) => {
-    relationsFunction();
-});
-
+  relationsFunction()
+})
 
 export {
-    sequelize,
-    User,
-    Specialty,
-    Test,
-    Doctor,
-    Review,
-    Question,
-    Option,
-    Answer
-};
+  sequelize,
+  User,
+  Specialty,
+  Test,
+  Doctor,
+  Review,
+  Question,
+  Option,
+  Answer
+}

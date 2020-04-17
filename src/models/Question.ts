@@ -1,6 +1,6 @@
-import sequelize from './sequelize';
-import { Model, DataTypes } from 'sequelize';
-import { Option } from '.';
+import sequelize from './sequelize'
+import { Model, DataTypes } from 'sequelize'
+import { Option } from '.'
 
 class Question extends Model {
     public id!: number;
@@ -13,31 +13,31 @@ class Question extends Model {
 }
 
 Question.init({
-    id: {
-        type: DataTypes.INTEGER,
-        autoIncrement: true,
-        primaryKey: true,
-    },
-    text: {
-        type: DataTypes.STRING(255),
-        allowNull: false,
-        validate: {
-            len: {
-                args: [5, 255],
-                msg: 'Question text length must be between 5 and 255 characters',
-            },
-        },
-    },
-    hint: {
-        type: DataTypes.STRING(255),
-        allowNull: true,
-        validate: {
-            len: {
-                args: [5, 255],
-                msg: 'Question text length must be between 5 and 255 characters',
-            },
-        },
-    },
+  id: {
+    type: DataTypes.INTEGER,
+    autoIncrement: true,
+    primaryKey: true
+  },
+  text: {
+    type: DataTypes.STRING(255),
+    allowNull: false,
+    validate: {
+      len: {
+        args: [5, 255],
+        msg: 'Question text length must be between 5 and 255 characters'
+      }
+    }
+  },
+  hint: {
+    type: DataTypes.STRING(255),
+    allowNull: true,
+    validate: {
+      len: {
+        args: [5, 255],
+        msg: 'Question text length must be between 5 and 255 characters'
+      }
+    }
+  }
 }, { sequelize })
 
-export default Question;
+export default Question

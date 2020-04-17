@@ -1,5 +1,5 @@
-import { Specialty, Question } from ".."
+import { Specialty, Question } from '..'
 
 export default () => {
-    Specialty.hasMany(Question, { foreignKey: 'SpecialtyId', as: 'questions' });
+  Specialty.hasMany(Question, { foreignKey: 'SpecialtyId', as: 'questions' })
 }

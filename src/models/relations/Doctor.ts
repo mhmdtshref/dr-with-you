@@ -1,6 +1,6 @@
-import { Doctor, Specialty, Review } from ".."
+import { Doctor, Specialty, Review } from '..'
 
 export default () => {
-    Doctor.belongsTo(Specialty, { foreignKey: 'SpecialtyId', as: 'specialty' });
-    Doctor.hasMany(Review, { foreignKey: 'DoctorId', as: 'reviews' });
+  Doctor.belongsTo(Specialty, { foreignKey: 'SpecialtyId', as: 'specialty' })
+  Doctor.hasMany(Review, { foreignKey: 'DoctorId', as: 'reviews' })
 }

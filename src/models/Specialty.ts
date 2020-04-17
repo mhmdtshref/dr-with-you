@@ -1,6 +1,6 @@
-import sequelize from './sequelize';
-import { Model, DataTypes } from 'sequelize';
-import { Doctor } from '.';
+import sequelize from './sequelize'
+import { Model, DataTypes } from 'sequelize'
+import { Doctor } from '.'
 
 class Specialty extends Model {
     public id!: number;
@@ -12,15 +12,15 @@ class Specialty extends Model {
 }
 
 Specialty.init({
-    id: {
-        type: DataTypes.INTEGER,
-        autoIncrement: true,
-        primaryKey: true,
-    },
-    name: {
-        type: DataTypes.STRING(64),
-        allowNull: false,
-    },
+  id: {
+    type: DataTypes.INTEGER,
+    autoIncrement: true,
+    primaryKey: true
+  },
+  name: {
+    type: DataTypes.STRING(64),
+    allowNull: false
+  }
 }, { sequelize })
 
-export default Specialty;
+export default Specialty
