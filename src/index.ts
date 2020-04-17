@@ -1,5 +1,5 @@
-import dotenv from 'dotenv';
-dotenv.config();
+import dotenvFlow from 'dotenv-flow';
+dotenvFlow.config({ path: './environment' });
 
 import app from './app';
 import http from 'http';
