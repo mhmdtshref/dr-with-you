@@ -2,7 +2,7 @@ import sequelize from './sequelize';
 import { Model, DataTypes } from 'sequelize';
 import { Test, Question, Option } from '.';
 
-class Option extends Model {
+class Answer extends Model {
     public id!: number;
     public text?: string;
 
@@ -14,7 +14,7 @@ class Option extends Model {
     public readonly createdAt!: Date;
 }
 
-Option.init({
+Answer.init({
     id: {
         type: DataTypes.INTEGER,
         autoIncrement: true,
@@ -68,4 +68,4 @@ Option.init({
     },
 }, { sequelize })
 
-export default Option;
+export default Answer;

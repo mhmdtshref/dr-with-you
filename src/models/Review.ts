@@ -54,4 +54,4 @@ Review.init({
     },
 }, { sequelize })
 
-export default Test;
+export default Review;

@@ -8,6 +8,13 @@ import Question from './Question';
 import Option from './Option';
 import Answer from './Answer';
 
+import relations from './relations';
+
+Object.values(relations).forEach((relationsFunction: Function) => {
+    relationsFunction();
+});
+
+
 export {
     sequelize,
     User,

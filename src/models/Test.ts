@@ -1,11 +1,12 @@
 import sequelize from './sequelize';
 import { Model, DataTypes } from 'sequelize';
-import { User, Review } from '.';
+import { User, Review, Answer } from '.';
 
 class Test extends Model {
     public id!: number;
     public user!: User;
     public review?: Review;
+    public answers!: Answer[];
     public note?: string;
 
     public readonly updatedAt!: Date;
@@ -27,18 +28,6 @@ Test.init({
             },
             isInt: {
                 msg: 'UserId must be type of integer'
-            },
-        },
-    },
-    ReviewId: {
-        type: DataTypes.INTEGER,
-        allowNull: true,
-        validate: {
-            isNumeric: {
-                msg: 'ReviewId must be type of numeric',
-            },
-            isInt: {
-                msg: 'ReviewId must be type of integer'
             },
         },
     },
