@@ -1,9 +1,9 @@
 import dotenvFlow from 'dotenv-flow';
+dotenvFlow.config({ path: './environment' });
 
 import app from './app';
 import http from 'http';
 import { sequelize } from './models';
-dotenvFlow.config({ path: './environment' });
 
 const httpServer = new http.Server(app);
 
