@@ -4,7 +4,7 @@ import { Question } from "../models";
 import lodash from 'lodash';
 
 export const index = (request: Request, response: Response) => {
-    QuestionService.getQuestions().then((questions: Question[]) => {
+    return QuestionService.getQuestions().then((questions: Question[]) => {
         response.status(200).json({
             success: true,
             data: {
@@ -21,7 +21,7 @@ export const index = (request: Request, response: Response) => {
 
 export const create = (request: Request, response: Response) => {
     const questionData = lodash.pick(request.body, ['text', 'hint', 'options']);
-    QuestionService.createQuestion(questionData as Question).then((question: Question) => {
+    return QuestionService.createQuestion(questionData as Question).then((question: Question) => {
         response.status(201).json({
             success: true,
             data: {
@@ -36,4 +36,33 @@ export const create = (request: Request, response: Response) => {
             },
         });
     })
+}
+
+export const update = (request: Request, response: Response) => {
+    const questionData = lodash.pick(request.body, ['text', 'hint', 'options']);
+    const questionId = Number(request.params.id);
+    return QuestionService.updateQuestion(questionId, questionData as Question).then(() => {
+        response.status(201).json({
+            succes: true,
+        });
+    }).catch((error: Error) => {
+        response.status(400).json({
+            success: false,
+            error: error.message,
+        });
+    });
+}
+
+export const del = (request: Request, response: Response) => {
+    const questionId = Number(request.params.id);
+    return QuestionService.deleteQuestion(questionId).then(() => {
+        response.status(200).json({
+            success: true,
+        });
+    }).catch((error: Error) => {
+        response.status(400).json({
+            success: false,
+            error: error.message,
+        });
+    });
 }
